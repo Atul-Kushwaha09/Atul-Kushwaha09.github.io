@@ -1,38 +1,296 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" class="dark">
 <head>
-  <title>ATUL KUSHWAHA | Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atul Kushwaha | Software Engineer Portfolio</title>
+    <meta name="description" content="Portfolio of Atul Kushwaha, B.Tech CSE(DS) student specializing in software engineering, cloud computing, and web development.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>ATUL KUSHWAHA</h1>
-  <p>Student Developer | Learning C++ and Data Structures & Algorithms</p>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">AK<span>.</span></a>
+            <div class="nav-links">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
 
-  <h2>About Me</h2>
-  <p>
-    I am a student developer building programming skills through
-    LeetCode, CodeChef, and personal projects.
-  </p>
+    <!-- Hero Section -->
+    <header id="home" class="hero">
+        <div class="hero-background">
+            <div class="glow-blob blob-1"></div>
+            <div class="glow-blob blob-2"></div>
+        </div>
+        <div class="container hero-content">
+            <p class="hero-greeting fade-up">👋 Hi, I'm</p>
+            <h1 class="hero-title fade-up" style="animation-delay: 0.1s;">Atul Kushwaha</h1>
+            <h2 class="hero-subtitle fade-up" style="animation-delay: 0.2s;">Software Engineer & Cloud Enthusiast</h2>
+            <p class="hero-description fade-up" style="animation-delay: 0.3s;">
+                B.Tech CSE(DS) student at ABES Engineering College with a passion for building scalable web applications, mastering cloud technologies, and solving complex problems.
+            </p>
+            <div class="hero-actions fade-up" style="animation-delay: 0.4s;">
+                <a href="#projects" class="btn btn-primary">View My Work</a>
+                <a href="#contact" class="btn btn-outline">Contact Me</a>
+            </div>
+            
+            <div class="social-links fade-up" style="animation-delay: 0.5s;">
+                <a href="https://github.com/Atul-Kushwaha09" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="mailto:atulkushwaha153551@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </header>
 
-  <h2>Skills</h2>
-  <p>C++, Python, Git, GitHub, HTML, CSS</p>
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title reveal">About Me</h2>
+            <div class="about-grid">
+                <div class="about-text reveal">
+                    <p>I'm a dedicated Computer Science student specializing in Data Science at ABES Engineering College. I have a strong foundation in Object-Oriented Programming, Data Structures, and Algorithms.</p>
+                    <p>My journey in tech involves actively building projects, learning cloud architecture (AWS), and participating in national-level hackathons like SIH 2025.</p>
+                    <div class="contact-info">
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Ghaziabad, Uttar Pradesh</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <span>+91 9639153551</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="education-timeline reveal">
+                    <h3 class="timeline-title">Education</h3>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">Sep 2024 - Aug 2028</div>
+                        <h4 class="timeline-heading">B.Tech in CSE (Data Science)</h4>
+                        <p class="timeline-org">ABES Engineering College • AKTU</p>
+                        <p class="timeline-score">CGPA: 8.67</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2023</div>
+                        <h4 class="timeline-heading">Class 12th (CBSE)</h4>
+                        <p class="timeline-org">Paramount Public School, Tatiri Baghpat UP</p>
+                        <p class="timeline-score">88% (92% in PCM)</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2021</div>
+                        <h4 class="timeline-heading">Class 10th (CBSE)</h4>
+                        <p class="timeline-org">Omega World Junior High School, Titroda Baghpat UP</p>
+                        <p class="timeline-score">80%</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <h2>Projects</h2>
-  <ul>
-    <li>
-      <b>LeetCode and CodeChef Solutions</b><br>
-      A collection of accepted competitive-programming solutions.<br>
-      <a href="https://github.com/Atul-Kushwaha09/leetcode-solutions">
-        View leetcode solutions
-      </a>
-    </li>
-  </ul>
+    <!-- Skills Section -->
+    <section id="skills" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title reveal">Technical Skills</h2>
+            <div class="skills-container reveal">
+                
+                <div class="skill-category">
+                    <h3 class="skill-category-title"><i class="fas fa-code"></i> Languages</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">C/C++</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">HTML5 / CSS3</span>
+                        <span class="skill-tag">JavaScript</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3 class="skill-category-title"><i class="fas fa-tools"></i> Developer Tools</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">VS Code</span>
+                        <span class="skill-tag">Git & GitHub</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">MySQL</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3 class="skill-category-title"><i class="fas fa-brain"></i> Core Concepts</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Data Structures & Algorithms</span>
+                        <span class="skill-tag">Object-Oriented Programming</span>
+                        <span class="skill-tag">DBMS</span>
+                        <span class="skill-tag">Operating Systems</span>
+                        <span class="skill-tag">Cloud Computing</span>
+                        <span class="skill-tag">Machine Learning</span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
 
-  <h2>Links</h2>
-  <ul>
-    <li><a href="https://github.com/Atul-Kushwaha09">GitHub</a></li>
-    <li><a href="PASTE-YOUR-LINKEDIN-LINK-HERE">LinkedIn</a></li>
-  </ul>
+    <!-- Experience & Achievements -->
+    <section id="experience" class="section">
+        <div class="container">
+            <h2 class="section-title reveal">Experience & Achievements</h2>
+            
+            <div class="exp-grid">
+                <!-- Internship -->
+                <div class="exp-column reveal">
+                    <h3 class="column-title">Internships</h3>
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>IBM–NASSCOM Virtual Internship Program</h4>
+                            <span class="badge">Jun 2026 – Jul 2026</span>
+                        </div>
+                        <h5 class="card-subtitle">PBEL 3.0</h5>
+                        <ul class="card-list">
+                            <li>Developed cloud-based solutions through IBM SkillsBuild and NASSCOM virtual modules.</li>
+                            <li>Implemented AWS cloud services and deployment concepts in guided hands-on labs.</li>
+                            <li>Applied cloud computing principles to practical projects and technical documentation tasks.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Certs & Achievements -->
+                <div class="exp-column reveal" style="animation-delay: 0.2s;">
+                    <h3 class="column-title">Certifications & Accolades</h3>
+                    
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <h4>Smart India Hackathon (SIH) 2025</h4>
+                        </div>
+                        <p class="card-text">Participated in a national-level hackathon focused on solving real-world technology problems.</p>
+                    </div>
+                    
+                    <div class="cert-list">
+                        <div class="cert-item">
+                            <div class="cert-icon"><i class="fab fa-aws"></i></div>
+                            <div class="cert-info">
+                                <h4>AWS SimuLearn: Cloud Practitioner</h4>
+                                <span>July 2026 - Aug 2026</span>
+                            </div>
+                        </div>
+                        <div class="cert-item">
+                            <div class="cert-icon"><i class="fab fa-aws"></i></div>
+                            <div class="cert-info">
+                                <h4>AWS Cloud Architecting</h4>
+                                <span>Feb 2026 - April 2026</span>
+                            </div>
+                        </div>
+                        <div class="cert-item">
+                            <div class="cert-icon"><i class="fab fa-aws"></i></div>
+                            <div class="cert-info">
+                                <h4>AWS Cloud Foundations</h4>
+                                <span>Oct 2025 - Jan 2026</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <p>Contact: atulkushwaha153551@gmail.com</p>
+    <!-- Projects Section -->
+    <section id="projects" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title reveal">Featured Projects</h2>
+            
+            <div class="project-grid reveal">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <div class="project-date">Aug 2026 – Nov 2026</div>
+                            <span class="status-badge pulse">In Progress</span>
+                        </div>
+                        <h3 class="project-title">HealthConnect</h3>
+                        <p class="project-desc">A healthcare platform for medicine availability, ambulance tracking, and hospital queue management designed to improve access to medical resources.</p>
+                        <div class="project-tech">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                            <span>AWS</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <div class="project-date">Nov 2025</div>
+                            <span class="status-badge completed">Completed</span>
+                        </div>
+                        <h3 class="project-title">College Complaint Portal</h3>
+                        <p class="project-desc">A web-based portal developed for students to submit complaints related to infrastructure, hostel, and administration effectively.</p>
+                        <div class="project-tech">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                            <span>AWS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <div class="contact-card reveal">
+                <h2>Let's Connect</h2>
+                <p>I am actively looking for internship and full-time opportunities. Feel free to reach out if you have an opportunity that matches my skills and interests!</p>
+                <a href="mailto:atulkushwaha153551@gmail.com" class="btn btn-primary contact-btn">Say Hello <i class="fas fa-paper-plane"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">AK<span>.</span></div>
+                <div class="footer-socials">
+                    <a href="https://github.com/Atul-Kushwaha09" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Atul Kushwaha. Designed and Built with ❤️.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
