@@ -1,38 +1,305 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-  <title>ATUL KUSHWAHA | Portfolio</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Atul Kushwaha is a CSE (Data Science) student developer focused on cloud computing, web development, and problem solving.">
+  <meta name="theme-color" content="#0b1120">
+  <title>Atul Kushwaha — Student Developer</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+    :root {
+      --bg: #0b1120;
+      --surface: #111a2e;
+      --surface-light: #17233b;
+      --text: #f4f7fb;
+      --muted: #9aa8be;
+      --line: rgba(176, 193, 219, .16);
+      --accent: #f0a35b;
+      --accent-light: #ffd1a4;
+      --max-width: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--text);
+      background: var(--bg);
+      font-family: 'Manrope', sans-serif;
+      line-height: 1.7;
+    }
+    body::before {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      content: '';
+      opacity: .35;
+      background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+      background-size: 56px 56px;
+      mask-image: linear-gradient(to bottom, black, transparent 72%);
+    }
+    a { color: inherit; text-decoration: none; }
+    a:focus-visible, button:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 4px;
+    }
+    .container { width: min(calc(100% - 48px), var(--max-width)); margin: 0 auto; }
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 18px;
+      color: var(--accent);
+      font: 500 .78rem 'DM Mono', monospace;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { width: 28px; height: 1px; background: var(--accent); content: ''; }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid transparent;
+      background: rgba(11, 17, 32, .82);
+      backdrop-filter: blur(18px);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; min-height: 78px; }
+    .brand { font-size: 1rem; font-weight: 800; letter-spacing: .08em; }
+    .brand span { color: var(--accent); }
+    .nav-links { display: flex; align-items: center; gap: 30px; color: var(--muted); font-size: .87rem; }
+    .nav-links a { transition: color .2s ease; }
+    .nav-links a:hover { color: var(--text); }
+    .nav-links .nav-cta { padding: 9px 16px; border: 1px solid var(--line); border-radius: 5px; color: var(--text); }
+    .menu-button { display: none; border: 0; color: var(--text); background: transparent; font-size: 1.5rem; cursor: pointer; }
+    .hero { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 80px; align-items: center; min-height: 690px; padding: 90px 0 110px; }
+    h1 { max-width: 760px; margin: 0; font-size: clamp(3.2rem, 8vw, 6.7rem); line-height: .98; letter-spacing: -.07em; }
+    h1 em { color: var(--accent); font-style: normal; }
+    .hero-copy { max-width: 610px; margin: 28px 0 34px; color: var(--muted); font-size: 1.1rem; }
+    .actions { display: flex; flex-wrap: wrap; gap: 14px; }
+    .button { display: inline-flex; align-items: center; gap: 10px; padding: 13px 20px; border: 1px solid var(--accent); border-radius: 5px; color: #1a1d25; background: var(--accent); font-weight: 800; transition: transform .2s ease, background .2s ease; }
+    .button:hover { transform: translateY(-2px); background: var(--accent-light); }
+    .button.secondary { border-color: var(--line); color: var(--text); background: transparent; }
+    .button.secondary:hover { background: var(--surface); }
+    .hero-card { position: relative; padding: 24px; border: 1px solid var(--line); border-radius: 8px; background: linear-gradient(145deg, rgba(23, 35, 59, .9), rgba(17, 26, 46, .65)); }
+    .hero-card::before { position: absolute; top: -1px; left: 24px; width: 58px; height: 3px; background: var(--accent); content: ''; }
+    .card-label { margin: 0 0 30px; color: var(--muted); font: .72rem 'DM Mono', monospace; text-transform: uppercase; }
+    .availability { display: flex; align-items: center; gap: 9px; margin-bottom: 34px; color: #b9e6c8; font-size: .86rem; }
+    .availability::before { width: 8px; height: 8px; border-radius: 50%; background: #64d18a; box-shadow: 0 0 0 5px rgba(100, 209, 138, .12); content: ''; }
+    .card-stat { padding-top: 18px; border-top: 1px solid var(--line); }
+    .card-stat strong { display: block; font-size: 2rem; line-height: 1; }
+    .card-stat span { color: var(--muted); font-size: .82rem; }
+    section { padding: 100px 0; border-top: 1px solid var(--line); }
+    .section-heading { display: flex; justify-content: space-between; gap: 30px; align-items: end; margin-bottom: 48px; }
+    h2 { margin: 0; font-size: clamp(2rem, 4vw, 3.3rem); letter-spacing: -.05em; line-height: 1.1; }
+    .section-intro { max-width: 420px; margin: 0; color: var(--muted); }
+    .about-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 90px; }
+    .about-grid p { margin: 0 0 20px; color: var(--muted); font-size: 1.02rem; }
+    .principles { display: grid; gap: 17px; }
+    .principle { display: flex; gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--line); }
+    .principle-number { color: var(--accent); font: .78rem 'DM Mono', monospace; }
+    .principle strong { display: block; margin-bottom: 3px; font-size: .95rem; }
+    .principle span { color: var(--muted); font-size: .86rem; }
+    .skills { display: flex; flex-wrap: wrap; gap: 10px; }
+    .skill { padding: 10px 14px; border: 1px solid var(--line); border-radius: 4px; color: var(--muted); background: rgba(17, 26, 46, .7); font: .82rem 'DM Mono', monospace; }
+    .projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .project { display: flex; min-height: 310px; flex-direction: column; padding: 28px; border: 1px solid var(--line); border-radius: 7px; background: var(--surface); transition: border-color .2s ease, transform .2s ease; }
+    .project:hover { border-color: rgba(240, 163, 91, .7); transform: translateY(-4px); }
+    .project-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 42px; }
+    .project-type { color: var(--accent); font: .7rem 'DM Mono', monospace; letter-spacing: .08em; text-transform: uppercase; }
+    .project-arrow { color: var(--accent); font-size: 1.4rem; }
+    .project h3 { margin: 0 0 12px; font-size: 1.45rem; letter-spacing: -.03em; }
+    .project p { margin: 0; color: var(--muted); font-size: .91rem; }
+    .project-footer { display: flex; gap: 10px; margin-top: auto; padding-top: 25px; color: var(--muted); font: .72rem 'DM Mono', monospace; }
+    .contact { display: grid; grid-template-columns: 1fr .8fr; gap: 80px; align-items: end; }
+    .contact h2 { max-width: 620px; }
+    .contact-copy { margin: 22px 0 30px; color: var(--muted); }
+    .contact-links { display: grid; gap: 13px; }
+    .contact-link { display: flex; justify-content: space-between; padding: 15px 0; border-bottom: 1px solid var(--line); font-size: .88rem; }
+    .contact-link span:first-child { color: var(--muted); }
+    .contact-link span:last-child { color: var(--accent); }
+    footer { padding: 28px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: .78rem; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 20px; }
+    .mono { font-family: 'DM Mono', monospace; }
+    @media (max-width: 760px) {
+      .container { width: min(calc(100% - 34px), var(--max-width)); }
+      .nav { min-height: 70px; }
+      .menu-button { display: block; }
+      .nav-links { display: none; position: absolute; top: 70px; right: 17px; left: 17px; flex-direction: column; align-items: stretch; gap: 0; padding: 8px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 12px; }
+      .hero { grid-template-columns: 1fr; gap: 45px; min-height: auto; padding: 84px 0 90px; }
+      .hero-card { max-width: 380px; }
+      section { padding: 75px 0; }
+      .section-heading, .contact { display: block; }
+      .section-intro { margin-top: 18px; }
+      .about-grid { grid-template-columns: 1fr; gap: 36px; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .contact-links { margin-top: 45px; }
+      .footer-inner { display: block; }
+      .footer-inner span { display: block; margin-top: 8px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition-duration: .01ms !important; } }
+  </style>
 </head>
 <body>
-  <h1>ATUL KUSHWAHA</h1>
-  <p>Student Developer | Learning C++ and Data Structures & Algorithms</p>
+  <header>
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="Atul Kushwaha home">AK<span>.</span></a>
+      <button class="menu-button" aria-controls="nav-links" aria-expanded="false" aria-label="Toggle navigation">☰</button>
+      <div class="nav-links" id="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#journey">Journey</a>
+        <a href="#projects">Projects</a>
+        <a class="nav-cta" href="#contact">Let’s connect ↗</a>
+      </div>
+    </nav>
+  </header>
 
-  <h2>About Me</h2>
-  <p>
-    I am a student developer building programming skills through
-    LeetCode, CodeChef, and personal projects.
-  </p>
+  <main id="top">
+    <section class="hero container" aria-labelledby="hero-title">
+      <div>
+        <p class="eyebrow">CSE (Data Science) student · India</p>
+        <h1 id="hero-title">Turning ideas into <em>useful software.</em></h1>
+        <p class="hero-copy">I’m Atul Kushwaha, a student developer exploring cloud computing, web development, and data structures &amp; algorithms. I learn by solving real problems and shipping consistently.</p>
+        <div class="actions">
+          <a class="button" href="#projects">Explore my work <span aria-hidden="true">↗</span></a>
+          <a class="button secondary" href="mailto:atulkushwaha153551@gmail.com">Get in touch</a>
+        </div>
+      </div>
+      <aside class="hero-card" aria-label="Current focus">
+        <p class="card-label">Current focus</p>
+        <div class="availability">Open to internships &amp; opportunities</div>
+        <div class="card-stat">
+          <strong>8.67</strong>
+          <span>B.Tech CGPA</span>
+        </div>
+        <div class="card-stat">
+          <strong>AWS</strong>
+          <span>Cloud learning path</span>
+        </div>
+      </aside>
+    </section>
 
-  <h2>Skills</h2>
-  <p>C++, Python, Git, GitHub, HTML, CSS</p>
+    <section id="about">
+      <div class="container">
+        <div class="section-heading">
+          <div><p class="eyebrow">01 / About</p><h2>Curious by nature.<br>Consistent by choice.</h2></div>
+          <p class="section-intro">The best way to grow as a developer is to stay curious, practise deliberately, and keep building.</p>
+        </div>
+        <div class="about-grid">
+          <div>
+            <p>I am a B.Tech student in Computer Science &amp; Engineering (Data Science) at ABES Engineering College. My current learning journey combines software fundamentals with practical cloud and web development.</p>
+            <p>I enjoy turning real-world problems into useful products—from a college complaint portal to HealthConnect, a healthcare platform currently in development. I also practise data structures and algorithms to make my thinking sharper and my code more reliable.</p>
+          </div>
+          <div class="principles">
+            <div class="principle"><span class="principle-number">01</span><div><strong>Learn deeply</strong><span>Understand the why, not just the syntax.</span></div></div>
+            <div class="principle"><span class="principle-number">02</span><div><strong>Build in public</strong><span>Share progress and learn from feedback.</span></div></div>
+            <div class="principle"><span class="principle-number">03</span><div><strong>Keep improving</strong><span>Small, consistent progress compounds.</span></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <h2>Projects</h2>
-  <ul>
-    <li>
-      <b>LeetCode and CodeChef Solutions</b><br>
-      A collection of accepted competitive-programming solutions.<br>
-      <a href="https://github.com/Atul-Kushwaha09/leetcode-solutions">
-        View leetcode solutions
-      </a>
-    </li>
-  </ul>
+    <section id="skills">
+      <div class="container">
+        <div class="section-heading">
+          <div><p class="eyebrow">02 / Toolkit</p><h2>A practical<br>technical toolkit.</h2></div>
+          <p class="section-intro">Languages, platforms, and fundamentals I use across coursework, projects, and hands-on cloud labs.</p>
+        </div>
+        <div class="skills" aria-label="Technical skills">
+          <span class="skill">C</span><span class="skill">C++</span><span class="skill">Java</span><span class="skill">Python</span><span class="skill">SQL</span><span class="skill">HTML / CSS</span><span class="skill">JavaScript</span><span class="skill">AWS</span><span class="skill">Docker</span><span class="skill">MySQL</span><span class="skill">Git / GitHub</span><span class="skill">DSA</span><span class="skill">OOP</span><span class="skill">DBMS</span>
+        </div>
+      </div>
+    </section>
 
-  <h2>Links</h2>
-  <ul>
-    <li><a href="https://github.com/Atul-Kushwaha09">GitHub</a></li>
-    <li><a href="PASTE-YOUR-LINKEDIN-LINK-HERE">LinkedIn</a></li>
-  </ul>
+    <section id="journey">
+      <div class="container">
+        <div class="section-heading">
+          <div><p class="eyebrow">03 / Journey</p><h2>Learning through<br>real experience.</h2></div>
+          <p class="section-intro">The milestones, coursework, and hands-on programmes shaping how I approach technology.</p>
+        </div>
+        <div class="projects-grid">
+          <article class="project">
+            <div class="project-top"><span class="project-type">Education · 2024—2028</span><span class="project-arrow" aria-hidden="true">01</span></div>
+            <div><h3>B.Tech in CSE (Data Science)</h3><p>ABES Engineering College, affiliated with AKTU. Currently maintaining an 8.67 CGPA while building a foundation in software and data.</p></div>
+            <div class="project-footer"><span>AKTU</span><span>·</span><span>Ghaziabad</span></div>
+          </article>
+          <article class="project">
+            <div class="project-top"><span class="project-type">Virtual internship · 2026</span><span class="project-arrow" aria-hidden="true">02</span></div>
+            <div><h3>IBM–NASSCOM PBEL 3.0</h3><p>Developed cloud knowledge through IBM SkillsBuild modules, AWS hands-on labs, and practical technical documentation.</p></div>
+            <div class="project-footer"><span>IBM SkillsBuild</span><span>·</span><span>AWS</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-  <p>Contact: atulkushwaha153551@gmail.com</p>
+    <section id="projects">
+      <div class="container">
+        <div class="section-heading">
+          <div><p class="eyebrow">04 / Selected work</p><h2>Projects with<br>a purpose.</h2></div>
+          <p class="section-intro">From campus workflows to healthcare access, I’m building projects around problems worth solving.</p>
+        </div>
+        <div class="projects-grid">
+          <div class="project">
+            <div class="project-top"><span class="project-type">Problem solving</span><span class="project-arrow" aria-hidden="true">↗</span></div>
+            <div><h3>College Complaint Portal</h3><p>A web portal for students to submit infrastructure, hostel, and administration complaints in one place.</p></div>
+            <div class="project-footer"><span>HTML</span><span>·</span><span>CSS</span><span>·</span><span>AWS</span></div>
+          </div>
+          <div class="project">
+            <div class="project-top"><span class="project-type">In progress · 2026</span><span class="project-arrow" aria-hidden="true">✦</span></div>
+            <div><h3>HealthConnect</h3><p>A healthcare platform for medicine availability, ambulance tracking, and hospital queue management.</p></div>
+            <div class="project-footer"><span>JavaScript</span><span>·</span><span>AWS</span><span>·</span><span>Web app</span></div>
+          </div>
+          <div class="project">
+            <div class="project-top"><span class="project-type">Problem solving</span><span class="project-arrow" aria-hidden="true">↗</span></div>
+            <div><h3>Competitive programming</h3><p>A growing collection of solutions and patterns from regular data structures and algorithms practice.</p></div>
+            <div class="project-footer"><span>C++</span><span>·</span><span>DSA</span><span>·</span><span>GitHub</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container contact">
+        <div>
+          <p class="eyebrow">05 / Contact</p>
+          <h2>Have an idea?<br><em>Let’s talk.</em></h2>
+          <p class="contact-copy">I’m always open to connecting with fellow developers, mentors, and teams building interesting things.</p>
+          <a class="button" href="mailto:atulkushwaha153551@gmail.com">Send an email <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="contact-links">
+          <a class="contact-link" href="mailto:atulkushwaha153551@gmail.com"><span>Email</span><span>↗</span></a>
+          <a class="contact-link" href="https://github.com/Atul-Kushwaha09" target="_blank" rel="noopener noreferrer"><span>GitHub</span><span>↗</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Atul Kushwaha</span>
+      <span class="mono">Designed &amp; built with intent.</span>
+    </div>
+  </footer>
+  <script>
+    const menuButton = document.querySelector('.menu-button');
+    const navLinks = document.querySelector('#nav-links');
+    menuButton.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded', isOpen);
+    });
+    navLinks.addEventListener('click', (event) => {
+      if (event.target.tagName === 'A') {
+        navLinks.classList.remove('open');
+        menuButton.setAttribute('aria-expanded', 'false');
+      }
+    });
+    document.querySelector('#year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
